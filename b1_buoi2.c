@@ -161,5 +161,29 @@ void dept_first_search(graph *pG){
         }
 	}
 }
+int main(int argc, char const *argv[]){
+    freopen("dothi.txt","r",stdin);
+    int n, m, u,v,i,j;
+    scanf("%d%d",&n,&m);
+    graph G;
+    initGraph(&G,n);
+    for(i=1;i<=m;i++){
+        scanf("%d%d",&u,&v);
+        addEdge(&G,u,v);
+    }
+    for(i=1;i<=n;i++){
+        degree(&G,i);
+    }
+    for(i=1;i<=n;i++){
+        List L=neighbors(&G,i);
+        printf("neighbor(%d): ",i);
+        for(j=0;j<L.size;j++){
+            printf("%d",elementAt(&L,j));
+        }
+        printf("\n");
+    }
+    dept_first_search(&G);
+    return 0;
+}
 
 
