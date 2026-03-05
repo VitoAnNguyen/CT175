@@ -74,7 +74,7 @@ void track(int i){
 }
 
 int main(){
-    freopen("D:/dothi.txt","r",stdin);
+    freopen("D:/dothidijkstra.txt","r",stdin);
     int n,m;
     scanf("%d %d",&n,&m);
     Graph G;
